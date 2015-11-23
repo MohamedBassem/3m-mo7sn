@@ -33,7 +33,9 @@ function handleMessage(message){
   DOOR_PLEASE_REGEX = /door (plz|please|pls)/i;
   HI_REGEX = new RegExp("hi <@" + slack.self.id + ">", "i");
 
-  if(message.text.match(DOOR_PLEASE_REGEX)){
+  if(message.text === undefined){
+    return;
+  }else if(message.text.match(DOOR_PLEASE_REGEX)){
     handleDoorPleaseMessage(message);
   }else if(message.text.match(HI_REGEX)){
     handleHiMessage(message);
