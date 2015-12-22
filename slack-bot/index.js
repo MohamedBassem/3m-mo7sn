@@ -48,14 +48,13 @@ function handleDoorPleaseMessage(message){
   channel = slack.getChannelGroupOrDMByID(message.channel);
   messageText = message.text;
 
-  channel.send("@" + user.name + " 7ader, but I need a raspberry pi :confused:");
   http.get({
       host: '192.168.1.199',
       port: 8080,
       path: '/',
       method: 'GET'
   }, function(res) {
-    channel.send("@" + user.name + " 7ader, but I need a raspberry pi :confused:");
+    channel.send("@" + user.name + " Done ya kbeer el m3lmeen :D");
   });
 }
 
